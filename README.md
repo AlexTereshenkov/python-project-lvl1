@@ -4,3 +4,6 @@
 [![Actions status: project](https://github.com/AlexTereshenkov/python-project-lvl1/actions/workflows/audit-check.yml/badge.svg)](https://github.com/AlexTereshenkov/python-project-lvl1/actions/workflows/audit-check.yml)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+
+Игра: "Проверка на чётность".
+Аскинема с примером установки пакета, запуска игры, победой и поражением игрока: https://asciinema.org/a/RFKjzvSTPpqQtQIR77Edw0Ftk
