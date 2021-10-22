@@ -16,12 +16,18 @@ brain-gcd:
 brain-progression:
 	poetry run brain-progression
 
+brain-prime:
+	poetry run brain-prime
+
 build:
 	poetry build
 
 lint:
 	poetry run flake8 brain_games
-	
+
+format:
+	poetry run yapf brain_games -i -r
+
 publish:
 	poetry publish --dry-run
 
