@@ -2,6 +2,7 @@ import random
 
 from brain_games.play import (ask_game_question, get_game_answer, check_answer,
                               tell_bye_on_wrong_answer, congratulate)
+from brain_games.configs import NUMBERS_MIN, NUMBERS_MAX
 
 
 def is_even(number):
@@ -16,7 +17,7 @@ def play_even_or_odd(user, trials_count):
     trials = 0
     while trials < trials_count:
         # keeping the number small for user convenience
-        number = random.randint(0, 100)
+        number = random.randint(NUMBERS_MIN, NUMBERS_MAX)
         ask_game_question(f"Question: {number}")
         answer = get_game_answer()
         correct_answer = answer_mapping.get(is_even(number))
