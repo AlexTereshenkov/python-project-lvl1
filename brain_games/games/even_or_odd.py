@@ -16,7 +16,6 @@ def play_even_or_odd(user, trials_count):
 
     trials = 0
     while trials < trials_count:
-        # keeping the number small for user convenience
         number = random.randint(NUMBERS_MIN, NUMBERS_MAX)
         ask_game_question(f"Question: {number}")
         answer = get_game_answer()

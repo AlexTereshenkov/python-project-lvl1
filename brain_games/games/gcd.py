@@ -11,7 +11,6 @@ def play_gcd(user, trials_count):
 
     trials = 0
     while trials < trials_count:
-        # keeping the number small for user convenience
         number1, number2 = random.randint(NUMBERS_MIN,
                                           NUMBERS_MAX), random.randint(
                                               NUMBERS_MIN, NUMBERS_MAX)
