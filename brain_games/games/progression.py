@@ -4,12 +4,13 @@ from brain_games.play import (ask_game_question, get_game_answer, check_answer,
                               tell_bye_on_wrong_answer, congratulate)
 from brain_games.configs import (NUMBERS_MIN, NUMBERS_MAX,
                                  MIN_PROGRESSION_LENGTH,
-                                 MAX_PROGRESSION_LENGTH)
+                                 MAX_PROGRESSION_LENGTH, MIN_PROGRESSION_STEP,
+                                 MAX_PROGRESSION_STEP)
 
 
 def get_progression():
     start = random.randint(NUMBERS_MIN, NUMBERS_MAX)
-    step = random.randint(1, 5)
+    step = random.randint(MIN_PROGRESSION_STEP, MAX_PROGRESSION_STEP)
     stop = start + step * random.randint(MIN_PROGRESSION_LENGTH,
                                          MAX_PROGRESSION_LENGTH)
     return [str(val) for val in range(start, stop + 1, step)]

@@ -10,3 +10,8 @@ NUMBERS_MAX = 100
 # a missing number in a given progression
 MIN_PROGRESSION_LENGTH = 5
 MAX_PROGRESSION_LENGTH = 10
+
+# minimum and maximum step in an arithmetic progression
+# keeping the number small for user convenience
+MIN_PROGRESSION_STEP = 1
+MAX_PROGRESSION_STEP = 5

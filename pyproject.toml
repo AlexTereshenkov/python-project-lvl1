@@ -6,6 +6,9 @@ authors = ["Your Name <you@example.com>"]
 packages = [
   { include = "brain_games" },
 ]
+classifiers = [
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
 
 [tool.poetry.dependencies]
 python = "^3.6"

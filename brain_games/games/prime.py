@@ -7,6 +7,7 @@ from brain_games.configs import NUMBERS_MIN, NUMBERS_MAX
 
 
 def is_prime(number):
+    # https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
     if number % 2 == 0 or number <= 1:
         return False
 
