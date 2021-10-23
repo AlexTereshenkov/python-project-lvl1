@@ -5,6 +5,34 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
+## Учебный проект 1. Игры разума
+
+### Описание проекта
+
+Набор консольных игр:
+- калькулятор
+- четное/нечетное число
+- наибольший общий делитель
+- простое число
+- пропущенное число в прогрессии
+
+### Минимальные требования
+
+Python 3.6+
+
+### Инструкции по установке и запуску
+
+```
+$ make build
+$ make package-install
+# теперь можно запускать игры:
+# brain-even
+# brain-calc
+# brain-gcd 
+# brain-progression
+# brain-prime 
+```
+
 Игра: "Проверка на чётность".
 Аскинема с примером установки пакета, запуска игры, победой и поражением игрока: https://asciinema.org/a/RFKjzvSTPpqQtQIR77Edw0Ftk
 
