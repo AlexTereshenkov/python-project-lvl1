@@ -1,5 +1,5 @@
 import random
-from fractions import gcd
+from math import gcd
 
 from brain_games.play import (ask_game_question, get_game_answer, check_answer,
                               tell_bye_on_wrong_answer, congratulate)
