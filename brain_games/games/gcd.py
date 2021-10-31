@@ -2,11 +2,15 @@ import random
 from math import gcd
 
 from brain_games.play import (ask_game_question, get_game_answer, check_answer,
-                              tell_bye_on_wrong_answer, congratulate)
+                              tell_bye_on_wrong_answer, congratulate, get_user,
+                              welcome_user)
 from brain_games.configs import NUMBERS_MIN, NUMBERS_MAX
 
 
-def play_gcd(user, trials_count):
+def play_gcd(trials_count):
+    user = get_user()
+    welcome_user(user)
+
     ask_game_question('Find the greatest common divisor of given numbers.')
 
     trials = 0

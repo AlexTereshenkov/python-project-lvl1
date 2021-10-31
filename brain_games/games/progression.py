@@ -1,7 +1,8 @@
 import random
 
 from brain_games.play import (ask_game_question, get_game_answer, check_answer,
-                              tell_bye_on_wrong_answer, congratulate)
+                              tell_bye_on_wrong_answer, congratulate, get_user,
+                              welcome_user)
 from brain_games.configs import (NUMBERS_MIN, NUMBERS_MAX,
                                  MIN_PROGRESSION_LENGTH,
                                  MAX_PROGRESSION_LENGTH, MIN_PROGRESSION_STEP,
@@ -17,6 +18,9 @@ def get_progression():
 
 
 def play_progression(user, trials_count):
+    user = get_user()
+    welcome_user(user)
+
     ask_game_question('What number is missing in the progression?')
 
     trials = 0

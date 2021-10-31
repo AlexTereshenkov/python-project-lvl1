@@ -2,7 +2,8 @@ import math
 import random
 
 from brain_games.play import (ask_game_question, get_game_answer, check_answer,
-                              tell_bye_on_wrong_answer, congratulate)
+                              tell_bye_on_wrong_answer, congratulate, get_user,
+                              welcome_user)
 from brain_games.configs import NUMBERS_MIN, NUMBERS_MAX
 
 
@@ -23,6 +24,9 @@ def is_prime(number):
 
 
 def play_prime(user, trials_count):
+    user = get_user()
+    welcome_user(user)
+
     ask_game_question(
         'Answer "yes" if given number is prime. Otherwise answer "no".')
     answer_mapping = {True: "yes", False: "no"}

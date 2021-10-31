@@ -2,11 +2,15 @@ import operator
 import random
 
 from brain_games.play import (ask_game_question, get_game_answer, check_answer,
-                              tell_bye_on_wrong_answer, congratulate)
+                              tell_bye_on_wrong_answer, congratulate, get_user,
+                              welcome_user)
 from brain_games.configs import NUMBERS_MIN, NUMBERS_MAX
 
 
-def play_calculator(user, trials_count):
+def play_calculator(trials_count):
+    user = get_user()
+    welcome_user(user)
+
     ask_game_question('What is the result of the expression?')
 
     trials = 0
