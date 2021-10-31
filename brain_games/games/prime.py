@@ -23,7 +23,7 @@ def is_prime(number):
     return True
 
 
-def play_prime(user, trials_count):
+def play_prime(trials_count):
     user = get_user()
     welcome_user(user)
 

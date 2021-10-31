@@ -17,7 +17,7 @@ def get_progression():
     return [str(val) for val in range(start, stop + 1, step)]
 
 
-def play_progression(user, trials_count):
+def play_progression(trials_count):
     user = get_user()
     welcome_user(user)
 

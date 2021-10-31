@@ -10,7 +10,7 @@ def is_even(number):
     return not number % 2
 
 
-def play_even_or_odd(user, trials_count):
+def play_even_or_odd(trials_count):
     user = get_user()
     welcome_user(user)
 
