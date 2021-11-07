@@ -7,11 +7,8 @@ from brain_games.configs import (NUMBERS_MIN, NUMBERS_MAX,
                                  MAX_PROGRESSION_STEP)
 
 
-def get_progression():
-    start = random.randint(NUMBERS_MIN, NUMBERS_MAX)
-    step = random.randint(MIN_PROGRESSION_STEP, MAX_PROGRESSION_STEP)
-    stop = start + step * random.randint(MIN_PROGRESSION_LENGTH,
-                                         MAX_PROGRESSION_LENGTH)
+def get_progression(start, step, min_length, max_length):
+    stop = start + step * random.randint(min_length, max_length)
     return [str(val) for val in range(start, stop + 1, step)]
 
 
@@ -19,7 +16,10 @@ def play_progression(trials_count):
     game_data = []
 
     for i in range(trials_count):
-        progression = get_progression()
+        start = random.randint(NUMBERS_MIN, NUMBERS_MAX)
+        step = random.randint(MIN_PROGRESSION_STEP, MAX_PROGRESSION_STEP)
+        progression = get_progression(start, step, MIN_PROGRESSION_LENGTH,
+                                      MAX_PROGRESSION_LENGTH)
         # note that we can't hide the first or the last element in the
         # progression because user doesn't know the original length of
         # the sequence
