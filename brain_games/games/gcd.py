@@ -1,17 +1,16 @@
 import random
 from math import gcd
 
-from brain_games.play import play_flow
-from brain_games.configs import NUMBERS_MIN, NUMBERS_MAX
+from brain_games.configs import NUMBERS_MIN, NUMBERS_MAX, TRIALS_COUNT
+from brain_games.constants import QUESTION_GAME_GCD
 
 
-def play_gcd(trials_count):
+def get_gcd_data():
     game_data = []
-    for i in range(trials_count):
+    for i in range(TRIALS_COUNT):
         number1, number2 = random.randint(NUMBERS_MIN,
                                           NUMBERS_MAX), random.randint(
                                               NUMBERS_MIN, NUMBERS_MAX)
         game_data.append((f"{number1} {number2}", gcd(number1, number2)))
 
-    question = 'Find the greatest common divisor of given numbers.'
-    play_flow(question, game_data)
+    return (QUESTION_GAME_GCD, game_data)

@@ -1,13 +1,13 @@
 import operator
 import random
 
-from brain_games.play import play_flow
-from brain_games.configs import NUMBERS_MIN, NUMBERS_MAX
+from brain_games.configs import NUMBERS_MIN, NUMBERS_MAX, TRIALS_COUNT
+from brain_games.constants import QUESTION_GAME_CALCULATOR
 
 
-def play_calculator(trials_count):
+def get_calculator_data():
     game_data = []
-    for i in range(trials_count):
+    for i in range(TRIALS_COUNT):
         number1, number2 = random.randint(NUMBERS_MIN,
                                           NUMBERS_MAX), random.randint(
                                               NUMBERS_MIN, NUMBERS_MAX)
@@ -20,5 +20,4 @@ def play_calculator(trials_count):
         correct_answer = operations_mapping.get(operation)(number1, number2)
         game_data.append((f"{number1} {operation} {number2}", correct_answer))
 
-    question = 'What is the result of the expression?'
-    play_flow(question, game_data)
+    return (QUESTION_GAME_CALCULATOR, game_data)

@@ -1,33 +1,29 @@
 import random
 
-from brain_games.play import play_flow
 from brain_games.configs import (NUMBERS_MIN, NUMBERS_MAX,
                                  MIN_PROGRESSION_LENGTH,
                                  MAX_PROGRESSION_LENGTH, MIN_PROGRESSION_STEP,
-                                 MAX_PROGRESSION_STEP)
+                                 MAX_PROGRESSION_STEP, TRIALS_COUNT)
+from brain_games.constants import QUESTION_GAME_PROGRESSION
 
 
-def get_progression(start, step, min_length, max_length):
-    stop = start + step * random.randint(min_length, max_length)
+def get_progression(start, step, stop):
     return [str(val) for val in range(start, stop + 1, step)]
 
 
-def play_progression(trials_count):
+def get_progression_data():
     game_data = []
 
-    for i in range(trials_count):
+    for i in range(TRIALS_COUNT):
         start = random.randint(NUMBERS_MIN, NUMBERS_MAX)
         step = random.randint(MIN_PROGRESSION_STEP, MAX_PROGRESSION_STEP)
-        progression = get_progression(start, step, MIN_PROGRESSION_LENGTH,
-                                      MAX_PROGRESSION_LENGTH)
-        # note that we can't hide the first or the last element in the
-        # progression because user doesn't know the original length of
-        # the sequence
-        random_position = random.randint(1, len(progression) - 2)
+        stop = start + step * random.randint(MIN_PROGRESSION_LENGTH,
+                                             MAX_PROGRESSION_LENGTH)
+        progression = get_progression(start, step, stop)
+        random_position = random.randint(0, len(progression) - 1)
         correct_answer = progression[random_position]
         progression[random_position] = ".."
 
         game_data.append((f"{' '.join(progression)}", correct_answer))
 
-    question = 'What number is missing in the progression?'
-    play_flow(question, game_data)
+    return (QUESTION_GAME_PROGRESSION, game_data)

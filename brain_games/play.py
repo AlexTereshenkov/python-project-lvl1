@@ -1,25 +1,6 @@
 import prompt
 
 
-def get_user():
-    print("Welcome to the Brain Games!")
-    name = prompt.string('May I have your name? ')
-    return name
-
-
-def welcome_user(user):
-    print(f"Hello, {user}!")
-    return
-
-
-def ask_game_question(question):
-    print(question)
-
-
-def get_user_answer():
-    return prompt.string("Your answer: ")
-
-
 def check_answer(answer, correct_answer):
     if answer == str(correct_answer):
         print("Correct!")
@@ -30,27 +11,20 @@ def check_answer(answer, correct_answer):
         return False
 
 
-def tell_bye_on_wrong_answer(user):
-    print(f"Let's try again, {user}!")
+def play_flow(game_data_getter):
+    question, game_data = game_data_getter()
 
+    print("Welcome to the Brain Games!")
+    user = prompt.string('May I have your name? ')
+    print(f"Hello, {user}!")
+    print(question)
 
-def congratulate(user):
-    print(f"Congratulations, {user}!")
-
-
-def play_flow(question, game_data):
-    user = get_user()
-    welcome_user(user)
-    ask_game_question(question)
-
-    for item in game_data:
-        question_value = item[0]
-        correct_answer = item[1]
-        ask_game_question(f"Question: {question_value}")
-        user_answer = get_user_answer()
+    for question_value, correct_answer in game_data:
+        print(f"Question: {question_value}")
+        user_answer = prompt.string("Your answer: ")
 
         if not check_answer(answer=user_answer, correct_answer=correct_answer):
-            tell_bye_on_wrong_answer(user)
+            print(f"Let's try again, {user}!")
             return
 
-    congratulate(user)
+    print(f"Congratulations, {user}!")

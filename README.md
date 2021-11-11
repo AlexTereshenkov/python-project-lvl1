@@ -3,7 +3,7 @@
 
 [![Actions status: project](https://github.com/AlexTereshenkov/python-project-lvl1/actions/workflows/audit-check.yml/badge.svg)](https://github.com/AlexTereshenkov/python-project-lvl1/actions/workflows/audit-check.yml)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/afb267a950dac3fec9f7/maintainability)](https://codeclimate.com/github/AlexTereshenkov/python-project-lvl1/maintainability)
 
 ## Учебный проект 1. Игры разума
 
