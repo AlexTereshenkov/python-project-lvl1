@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
-from brain_games.games.gcd import get_gcd_data
-from brain_games.play import play_flow
+from brain_games.games import gcd
+from brain_games.play import play
 
 
 def main():
-    play_flow(game_data_getter=get_gcd_data)
+    play(game=gcd)
 
 
 if __name__ == "__main__":

@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
-from brain_games.games.progression import get_progression_data
-from brain_games.play import play_flow
+from brain_games.games import progression
+from brain_games.play import play
 
 
 def main():
-    play_flow(game_data_getter=get_progression_data)
+    play(game=progression)
 
 
 if __name__ == "__main__":

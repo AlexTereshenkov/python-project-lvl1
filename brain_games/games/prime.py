@@ -2,7 +2,8 @@ import math
 import random
 
 from brain_games.configs import NUMBERS_MIN, NUMBERS_MAX, TRIALS_COUNT
-from brain_games.constants import QUESTION_GAME_PRIME
+
+QUESTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def is_prime(number):
@@ -21,7 +22,7 @@ def is_prime(number):
     return True
 
 
-def get_prime_data():
+def get_data():
     answer_mapping = {True: "yes", False: "no"}
 
     game_data = []
@@ -29,4 +30,4 @@ def get_prime_data():
         number = random.randint(NUMBERS_MIN, NUMBERS_MAX)
         game_data.append((number, answer_mapping.get(is_prime(number))))
 
-    return (QUESTION_GAME_PRIME, game_data)
+    return game_data

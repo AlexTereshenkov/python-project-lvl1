@@ -4,14 +4,15 @@ from brain_games.configs import (NUMBERS_MIN, NUMBERS_MAX,
                                  MIN_PROGRESSION_LENGTH,
                                  MAX_PROGRESSION_LENGTH, MIN_PROGRESSION_STEP,
                                  MAX_PROGRESSION_STEP, TRIALS_COUNT)
-from brain_games.constants import QUESTION_GAME_PROGRESSION
+
+QUESTION = 'What number is missing in the progression?'
 
 
 def get_progression(start, step, stop):
     return [str(val) for val in range(start, stop + 1, step)]
 
 
-def get_progression_data():
+def get_data():
     game_data = []
 
     for i in range(TRIALS_COUNT):
@@ -24,6 +25,6 @@ def get_progression_data():
         correct_answer = progression[random_position]
         progression[random_position] = ".."
 
-        game_data.append((f"{' '.join(progression)}", correct_answer))
+        game_data.append((' '.join(progression), correct_answer))
 
-    return (QUESTION_GAME_PROGRESSION, game_data)
+    return game_data

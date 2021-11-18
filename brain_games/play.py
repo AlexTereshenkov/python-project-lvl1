@@ -1,18 +1,8 @@
 import prompt
 
 
-def check_answer(answer, correct_answer):
-    if answer == str(correct_answer):
-        print("Correct!")
-        return True
-    else:
-        print(f"'{answer}' is wrong answer ;(. "
-              f"Correct answer was '{correct_answer}'.")
-        return False
-
-
-def play_flow(game_data_getter):
-    question, game_data = game_data_getter()
+def play(game):
+    question, game_data = game.QUESTION, game.get_data()
 
     print("Welcome to the Brain Games!")
     user = prompt.string('May I have your name? ')
@@ -23,7 +13,11 @@ def play_flow(game_data_getter):
         print(f"Question: {question_value}")
         user_answer = prompt.string("Your answer: ")
 
-        if not check_answer(answer=user_answer, correct_answer=correct_answer):
+        if user_answer == str(correct_answer):
+            print("Correct!")
+        else:
+            print(f"'{user_answer}' is wrong answer ;(. "
+                  f"Correct answer was '{correct_answer}'.")
             print(f"Let's try again, {user}!")
             return
 

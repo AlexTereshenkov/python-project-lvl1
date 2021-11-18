@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
-from brain_games.games.prime import get_prime_data
-from brain_games.play import play_flow
+from brain_games.games import prime
+from brain_games.play import play
 
 
 def main():
-    play_flow(game_data_getter=get_prime_data)
+    play(game=prime)
 
 
 if __name__ == "__main__":

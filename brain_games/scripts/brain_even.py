@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
-from brain_games.games.even_or_odd import get_even_or_odd_data
-from brain_games.play import play_flow
+from brain_games.games import even_or_odd
+from brain_games.play import play
 
 
 def main():
-    play_flow(game_data_getter=get_even_or_odd_data)
+    play(game=even_or_odd)
 
 
 if __name__ == "__main__":
