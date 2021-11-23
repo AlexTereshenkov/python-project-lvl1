@@ -19,6 +19,7 @@ def get_data():
         }
         operation = random.choice(tuple(operations_mapping))
         correct_answer = operations_mapping.get(operation)(number1, number2)
-        game_data.append((f"{number1} {operation} {number2}", correct_answer))
+        question = f"{number1} {operation} {number2}"
+        game_data.append((question, correct_answer))
 
     return game_data
