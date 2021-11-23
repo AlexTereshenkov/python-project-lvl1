@@ -28,6 +28,8 @@ def get_data():
     game_data = []
     for i in range(TRIALS_COUNT):
         number = random.randint(NUMBERS_MIN, NUMBERS_MAX)
-        game_data.append((number, answer_mapping.get(is_prime(number))))
+        question = number
+        answer = answer_mapping.get(is_prime(number))
+        game_data.append((question, answer))
 
     return game_data

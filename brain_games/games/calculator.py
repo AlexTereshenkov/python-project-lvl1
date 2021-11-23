@@ -18,8 +18,8 @@ def get_data():
             "*": operator.mul,
         }
         operation = random.choice(tuple(operations_mapping))
-        correct_answer = operations_mapping.get(operation)(number1, number2)
+        answer = operations_mapping.get(operation)(number1, number2)
         question = f"{number1} {operation} {number2}"
-        game_data.append((question, correct_answer))
+        game_data.append((question, answer))
 
     return game_data

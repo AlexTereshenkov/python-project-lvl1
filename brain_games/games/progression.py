@@ -22,9 +22,9 @@ def get_data():
                                              MAX_PROGRESSION_LENGTH)
         progression = get_progression(start, step, stop)
         random_position = random.randint(0, len(progression) - 1)
-        correct_answer = progression[random_position]
+        answer = progression[random_position]
         progression[random_position] = ".."
-
-        game_data.append((' '.join(progression), correct_answer))
+        question = ' '.join(progression)
+        game_data.append((question, answer))
 
     return game_data

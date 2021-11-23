@@ -12,6 +12,8 @@ def get_data():
         number1, number2 = random.randint(NUMBERS_MIN,
                                           NUMBERS_MAX), random.randint(
                                               NUMBERS_MIN, NUMBERS_MAX)
-        game_data.append((f"{number1} {number2}", math_gcd(number1, number2)))
+        question = f"{number1} {number2}"
+        answer = math_gcd(number1, number2)
+        game_data.append((question, answer))
 
     return game_data
